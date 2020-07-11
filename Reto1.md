@@ -1,5 +1,3 @@
-RETO 1
-
 1) ¿Cuáles son las responsabilidades de un manejador de rutas?
 
     - Trazar rutas/vistas anidadas.
