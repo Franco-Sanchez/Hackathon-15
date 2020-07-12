@@ -1,41 +1,48 @@
 <template>
     <div class="details">
-        <header class="Crud-CabeceraPrincipal">
-            <HelloWorld msg="VIDEO TV"/> 
-            <HelloWorld class="Crud-CabeceraPrincipal-ModalAgregar" option="Ver mapa" />
-        </header>
-        <section>
-            <header>
-                <HelloWorld subtitulo="Tecnicas de programacion" />
-            </header>
-            <article>
-                <div class="img"></div>
-            </article>
-        </section>
+        <Encabezado titulo="VIDEO TV" />
+        <CuerpoDetails />
     </div>
 </template>
 
 <script>
 
-import HelloWorld from '@/components/HelloWorld.vue'
+import Encabezado from '@/components/Encabezado.vue'
+import CuerpoDetails from '@/components/CuerpoDetails.vue'
 
 export default {
     name: 'Details',
     components: {
-        HelloWorld
+        Encabezado,
+        CuerpoDetails
     }
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 
-article {
+.VideoDetalle {
     padding: 0 2% 0 2%;
 
-    & .img {
+    &-Img {
         width: 100%;
         background-color: skyblue;
         height: 400px;
+    }
+
+    &-Contenido {
+
+        &-Visitas {
+            font-size: .7rem;
+        }
+        
+        &-Detalle {
+            color: #808080;
+        }
+    }
+
+    &-Contenido * {
+        margin-top: 1%;
     }
 }
     

@@ -1,44 +1,27 @@
 <template>
   <div class="home">
-    <article>
-      <header class="Crud-CabeceraPrincipal">
-        <HelloWorld msg="VIDEO PACHA TV"/>
-        <HelloWorld class="Crud-CabeceraPrincipal-ModalAgregar" option="Agregar Video" />
-      </header>
-      <section>
-        <header>
-          <HelloWorld subtitulo="Lista de videos"/>
-        </header>
-        <article class="Crud-ContenedorVideos">
-          <div class="Crud-CajaVideo">
-            <div class="Crud-CajaVideo-Img"></div>
-            <div class="Crud-CajaVideo-Contenido">
-              <h3>Tecnicas de programación</h3>
-              <p class="Crud-CajaVideo-Contenido-Visu">0 visualizaciones</p>
-              <p class="Crud-CajaVideo-Contenido-Descripcion">Lorem ipsum dolor sit amet, consectetur adipiscing elit. A mauris morbi aliquam sollicitudin suspendisse feugiat. Et senectus eget nibh in. Nullam ullamcorper gravida viverra turpis aliquam at ac risus proin. Dignissim convallis risus, vestibulum et eget.</p>
-              <router-link to="/details"><div>Ver detalle</div></router-link>
-            </div>
-          </div>
-        </article>
-      </section>     
-    </article>            
+      <Encabezado titulo="VIDEO PACHA TV"/>
+      <CuerpoHome subtitulo="Lista de videos"/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import Encabezado from '@/components/Encabezado.vue'
+import CuerpoHome from '@/components/CuerpoHome.vue'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    Encabezado,
+    CuerpoHome
   }
 }
 
 </script>
 
 <style lang="scss">
+
 .Crud-CabeceraPrincipal {
   display: flex;
   justify-content: space-between;
@@ -51,6 +34,7 @@ export default {
 
   &-ModalAgregar {
     cursor: pointer;
+    font-size: 1rem;
   }
 
   &-ModalAgregar:hover {
@@ -58,20 +42,6 @@ export default {
   }
 
 }  
-
-h1 {
-  font-size: 2.2rem;
-}
-
-h2 {
-  font-size: 1.8rem;
-  font-weight: bold;
-}
-
-section {
-  margin-top: 3%;
-  margin-bottom: 3%;
-}
 
 section header {
   padding: 0 2%;
@@ -83,6 +53,7 @@ section header {
   display: flex;
   flex-wrap: wrap;
 }
+
 .Crud-CajaVideo {
   width: 22.5%;
   margin-bottom: 2%;
@@ -99,13 +70,8 @@ section header {
 
   &-Contenido {
     padding: 0 4% 4% 4%;
-
-    & h3 {
-      font-size: .9rem;
-      font-weight: bold;
-    }
-
-    &-Visu {
+   
+    &-Visitas {
       font-size: .7rem;
     }
 
@@ -113,15 +79,6 @@ section header {
       font-size: .8rem;
     }
 
-    /* &-a {
-      width: 100%;
-      border: none;
-      background: #00C1AA;
-      box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
-      color: white;
-      font-size: .8rem;
-      padding: 4% 0;
-      } */
   }
 
   &-Contenido * {
@@ -135,14 +92,6 @@ section header {
 }
 
 button {
-  cursor: pointer;
-}
-
-a {
-  text-decoration: none;
-}
-
-a div {
   width: 100%;
   border: none;
   background: #00C1AA;
@@ -151,6 +100,7 @@ a div {
   font-size: .8rem;
   padding: 4% 0;
   text-align: center;
+  cursor: pointer;
 }
 
 </style>
